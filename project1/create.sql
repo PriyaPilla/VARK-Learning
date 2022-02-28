@@ -6,17 +6,14 @@ CREATE TABLE books(
     publicationyear INTEGER NOT NULL
 );
 
-CREATE TABLE users(
+CREATE TABLE student(
     id SERIAL PRIMARY KEY,
     username VARCHAR NOT NULL,
     password VARCHAR NOT NULL
 );
 
-CREATE TABLE reviews(
+CREATE TABLE instructor(
     id SERIAL PRIMARY KEY,
-    user_id INTEGER NOT NULL,
-    book_id INTEGER NOT NULL,
-    textreview VARCHAR,
-    rating INTEGER,
-    username VARCHAR NOT NULL
+    username VARCHAR NOT NULL,
+    password VARCHAR NOT NULL
 );

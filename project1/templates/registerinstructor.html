@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    register
+    register instructor
 {% endblock %}
 
 {% block body %}
-    <h1>  Sign up </h1>
+    <h1>  Sign up Instructor </h1>
 
-    <form action="{{ url_for('registrationcomplete') }}" method="post">
+    <form action="{{ url_for('registrationcompleteinstructor') }}" method="post">
         
         <div class="form-group">
             <input class="form-control" name="username" placeholder="Enter username">
@@ -23,7 +23,7 @@
 
     </form>
 
-    <form action="{{ url_for('login') }}" method="post">
+    <form action="{{ url_for('logininstructor') }}" method="post">
 
         <div class="form-group">
             <button class="btn btn-primary">Login</button>
