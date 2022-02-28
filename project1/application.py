@@ -14,53 +14,108 @@ db.init_app(app)
 
 @app.route("/")
 def index():
-    if "user_id" in session:
-        session.pop("user_id", None)
+    if "student_id" in session:
+        session.pop("student_id", None)
+    if "instructor_id" in session:
+        session.pop("instructor_id", None)
     return render_template("index.html")
 
 
-@app.route("/register", methods=["POST"])
-def register():
-    return render_template("register.html")
+@app.route("/instructor", methods=["POST"])
+def instructor():
+    return render_template("instructor.html")
 
 
-@app.route("/registrationcomplete", methods=["POST"])
-def registrationcomplete():
+@app.route("/student", methods=["POST"])
+def student():
+    return render_template("student.html")
+
+
+@app.route("/registerstudent", methods=["POST"])
+def registerstudent():
+    return render_template("registerstudent.html")
+
+
+@app.route("/registerinstructor", methods=["POST"])
+def registerinstructor():
+    return render_template("registerinstructor.html")
+
+
+@app.route("/registrationcompletestudent", methods=["POST"])
+def registrationcompletestudent():
    
     username = request.form.get("username")
     password = request.form.get("password")
 
-    u = User(username = username, password = password)
-    db.session.add(u)
+    s = Student(username = username, password = password)
+    db.session.add(s)
     db.session.commit()
 
-    return render_template("registrationcomplete.html")
+    return render_template("registrationcompletestudent.html")
 
 
-@app.route("/login", methods=["POST"])
-def login():
+@app.route("/registrationcompleteinstructor", methods=["POST"])
+def registrationcompleteinstructor():
+   
+    username = request.form.get("username")
+    password = request.form.get("password")
+
+    i = Instructor(username = username, password = password)
+    db.session.add(i)
+    db.session.commit()
+
+    return render_template("registrationcompleteinstructor.html")
+
+
+@app.route("/loginstudent", methods=["POST"])
+def loginstudent():
     
-    return render_template("login.html")
+    return render_template("loginstudent.html")
+
+@app.route("/logininstructor", methods=["POST"])
+def logininstructor():
+    
+    return render_template("logininstructor.html")
 
 
-@app.route("/search", methods=["POST"]) 
-def search():
-    if "user_id" not in session:
+@app.route("/quiz", methods=["POST"]) 
+def quiz():
+    if "student_id" not in session:
         username = request.form.get("username")
         password = request.form.get("password")
 
-        user = User.query.filter_by(username = username).first()
+        student = Student.query.filter_by(username = username).first()
    
-        if user == None:
+        if student == None:
             return render_template("error.html", message="Username or password does not match.")
-        if user.password != password:
+        if student.password != password:
             return render_template("error.html", message="Username or password does not match.")
        
-        session["user_id"] = user.id
+        session["student_id"] = student.id
+
+    return render_template("quiz.html")
+
+# create function/url that quiz form submits to. 
+# this function could include if statements with matching learning styles to the student input
+
+@app.route("/searchinstructor", methods=["POST"]) 
+def searchinstructor():
+    if "instructor_id" not in session:
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        instructor = Instructor.query.filter_by(username = username).first()
+   
+        if instructor == None:
+            return render_template("error.html", message="Username or password does not match.")
+        if instructor.password != password:
+            return render_template("error.html", message="Username or password does not match.")
+       
+        session["instructor_id"] = instructor.id
 
     books = Book.query.all()
 
-    return render_template("search.html", books=books)
+    return render_template("searchinstructor.html", books=books)
 
 
 @app.route("/book", methods=["POST"])
@@ -122,9 +177,14 @@ def review():
     return render_template ("review.html")
 
 
-@app.route("/logout", methods=["POST", "GET"])
-def logout():
-    session.pop("user_id", None)
+@app.route("/logoutstudent", methods=["POST", "GET"])
+def logoutstudent():
+    session.pop("student_id", None)
+    return render_template("index.html")
+
+@app.route("/logoutinstructor", methods=["POST", "GET"])
+def logoutinstructor():
+    session.pop("instructor_id", None)
     return render_template("index.html")
 
 
