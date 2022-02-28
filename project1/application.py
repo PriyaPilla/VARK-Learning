@@ -6,7 +6,8 @@ from sqlalchemy import exc
 
 app = Flask(__name__)
 app.secret_key = "any random string"
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://mfjobdlqdvmjef:6068e27eae9bd7d5ab31e8a03ff6385872ba0f1d7ea5fa07d0e5e1fac58ab814@ec2-54-236-169-55.compute-1.amazonaws.com:5432/ddvh3o0nq9l139"
+#app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
