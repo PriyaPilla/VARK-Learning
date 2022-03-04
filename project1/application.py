@@ -97,6 +97,19 @@ def quiz():
 
 # create function/url that quiz form submits to. 
 # this function could include if statements with matching learning styles to the student input
+# where the quiz code should go after the user submits from quiz.html 
+@app.route("/quizresults", methods=["POST"])
+def quizresults():
+
+    #gets value of selected radio button
+    result = request.form['learning_style']
+    
+    if result == "Visual":
+        #student. make learning style visual
+        return render_template("visualresult.html", message="Visual selected")
+
+    #return render_template("quizresults.html")
+
 
 @app.route("/searchinstructor", methods=["POST"]) 
 def searchinstructor():

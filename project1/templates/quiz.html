@@ -32,6 +32,14 @@
        
         <input type="radio" id="kinesthetic" name="learning_style" value="Kinesthetic">
         <label for="kinesthetic">Kinesthetic</label><br>
+    <!--</form>-->
+
+    <form action="{{ url_for('quizresults') }}" method="post">
+
+        <div class="form-group">
+            <button class="btn btn-primary">Submit Result</button>
+        </div>
+
     </form>
 
 
