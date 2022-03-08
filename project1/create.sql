@@ -9,7 +9,8 @@ CREATE TABLE books(
 CREATE TABLE student(
     id SERIAL PRIMARY KEY,
     username VARCHAR NOT NULL,
-    password VARCHAR NOT NULL
+    password VARCHAR NOT NULL,
+    learning_style VARCHAR NULL
 );
 
 CREATE TABLE instructor(

@@ -16,11 +16,13 @@
     </h1>
 
     <!--insert code for quiz link and user input result-->
-    <a href="https://vark-learn.com/the-vark-questionnaire/"><h3>Click here to take the quiz</h3></a>
+    <a href="https://vark-learn.com/the-vark-questionnaire/" target="_blank"><h3>Click here to take the quiz</h3></a>
 
     <p><h4>Select your learning style given by the quiz results.</h4></p>
     <p><h5>If you get a Multimodal result, select the learning style you rank highest with or desire the most.</h5></p>
-    <form>
+    
+    <form action="{{ url_for('quizresults') }}" method="post">
+        
         <input type="radio" id="visual" name="learning_style" value="Visual">
         <label for="visual">Visual</label><br>
         
@@ -34,7 +36,7 @@
         <label for="kinesthetic">Kinesthetic</label><br>
     <!--</form>-->
 
-    <form action="{{ url_for('quizresults') }}" method="post">
+    
 
         <div class="form-group">
             <button class="btn btn-primary">Submit Result</button>
