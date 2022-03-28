@@ -98,9 +98,63 @@ def quiz():
 
 # create function/url that quiz form submits to. 
 # this function could include if statements with matching learning styles to the student input
+# where the quiz code should go after the user submits from quiz.html 
+@app.route("/quizresults", methods=["POST"])
+def quizresults():
 
-@app.route("/searchinstructor", methods=["POST"]) 
-def searchinstructor():
+    #gets value of selected radio button
+    result = request.form['learning_style']
+    
+    if result == "Visual":
+        #database: add learning style to student table
+        if "student_id" in session:
+            student_id = int(session["student_id"])
+    
+        student = Student.query.filter_by(id = student_id).first() 
+        student.learning_style = "visual"
+
+        db.session.commit()
+
+        return render_template("visualresult.html", message="Visual selected")
+
+    if result == "Aural":
+        #database: add learning style to student table
+        if "student_id" in session:
+            student_id = int(session["student_id"])
+    
+        student = Student.query.filter_by(id = student_id).first() 
+        student.learning_style = "aural"
+        
+        db.session.commit()
+        return render_template("auralresult.html", message="Aural selected")
+
+    if result == "Read/Write":
+        #database: add learning style to student table
+        if "student_id" in session:
+            student_id = int(session["student_id"])
+    
+        student = Student.query.filter_by(id = student_id).first() 
+        student.learning_style = "read/write"
+        
+        db.session.commit()
+        return render_template("readwriteresult.html", message="Read/Write selected")
+
+    if result == "Kinesthetic":
+        #database: add learning style to student table
+        if "student_id" in session:
+            student_id = int(session["student_id"])
+    
+        student = Student.query.filter_by(id = student_id).first() 
+        student.learning_style = "kinesthetic"
+        
+        db.session.commit()
+        return render_template("kinestheticresult.html", message="Kinesthetic selected")
+
+    #return render_template("quizresults.html")
+
+
+@app.route("/instructorpage", methods=["POST"]) 
+def instructorpage():
     if "instructor_id" not in session:
         username = request.form.get("username")
         password = request.form.get("password")
@@ -114,9 +168,7 @@ def searchinstructor():
        
         session["instructor_id"] = instructor.id
 
-    books = Book.query.all()
-
-    return render_template("searchinstructor.html", books=books)
+    return render_template("instructorpage.html")
 
 
 @app.route("/book", methods=["POST"])
