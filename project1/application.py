@@ -99,6 +99,7 @@ def quiz():
 # create function/url that quiz form submits to. 
 # this function could include if statements with matching learning styles to the student input
 # where the quiz code should go after the user submits from quiz.html 
+#comment for merge issues - something to add
 @app.route("/quizresults", methods=["POST"])
 def quizresults():
 
