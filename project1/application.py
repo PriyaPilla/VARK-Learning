@@ -94,6 +94,21 @@ def quiz():
        
         session["student_id"] = student.id
 
+        #if quiz already taken and learning style already exists, redict to learning style page
+        if "student_id" in session:
+            student_id = int(session["student_id"])
+    
+        student = Student.query.filter_by(id = student_id).first() 
+        
+        if student.learning_style == "visual":
+            return render_template("visualresult.html", message="Visual selected")
+        if student.learning_style == "aural":
+            return render_template("auralresult.html", message="Aural selected")
+        if student.learning_style == "read/write":
+            return render_template("readwriteresult.html", message="Read/Write selected")
+        if student.learning_style == "kinesthetic":
+            return render_template("kinestheticresult.html", message="Kinesthetic selected")
+        
     return render_template("quiz.html")
 
 # create function/url that quiz form submits to. 
@@ -153,6 +168,25 @@ def quizresults():
 
     #return render_template("quizresults.html")
 
+@app.route("/ww2visual", methods=["POST"]) 
+def ww2visual():
+    return render_template("ww2visual.html")
+
+@app.route("/home", methods=["POST"]) 
+def home():
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first() 
+        
+    if student.learning_style == "visual":
+        return render_template("visualresult.html", message="Visual selected")
+    if student.learning_style == "aural":
+        return render_template("auralresult.html", message="Aural selected")
+    if student.learning_style == "read/write":
+        return render_template("readwriteresult.html", message="Read/Write selected")
+    if student.learning_style == "kinesthetic":
+        return render_template("kinestheticresult.html", message="Kinesthetic selected")
 
 @app.route("/instructorpage", methods=["POST"]) 
 def instructorpage():

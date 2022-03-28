@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Visual
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center;">
+    WW2 Visual
+</h1>
+
+<h4 style="text-align:center;">Enter content here</h4>
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+
+{% endblock %}
