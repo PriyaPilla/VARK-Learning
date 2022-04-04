@@ -172,6 +172,10 @@ def quizresults():
 def ww2visual():
     return render_template("ww2visual.html")
 
+@app.route("/ww2aural", methods=["POST"]) 
+def ww2aural():
+    return render_template("ww2aural.html")
+
 @app.route("/home", methods=["POST"]) 
 def home():
     if "student_id" in session:

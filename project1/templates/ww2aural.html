@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Aural
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center;">
+    WW2 Aural Lesson
+</h1>
+<br><br>
+
+<h4 style="text-align:center;">The D-Day landings</h4>
+<br>
+
+<iframe title="Dr Peter Caddick-Adams: D-Day (1944)" allowtransparency="true" height="300" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?from=embed&i=gsti4-b371f6-pb&square=1&share=1&download=1&fonts=Arial&skin=3267a3&font-color=auto&rtl=0&logo_link=&btn-skin=7&size=300" allowfullscreen=""></iframe>
+
+<br>
+<br>
+<h4 style="text-align:center;">Damian Lewis: Behind Enemy Lines (1944)</h4>
+<br>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/7GypSd9fycQctMd3pR6jWR?utm_source=generator" width="100%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+<br>
+<h4 style="text-align:center;">Interview w/ Edward Aldrich: The Partnership: George Marshall, Henry Stimson and the Extraordinary Collaboration That Won WWII</h4>
+<br>
+
+<iframe frameBorder="0" height="300" scrolling="no" src="https://playlist.megaphone.fm/?e=ADL2991616077"
+width="100%"></iframe>
+
+<br>
+<h4 style="text-align:center;">Churchill Wants War</h4>
+<br>
+
+<iframe frameBorder="0" height="300" scrolling="no" src="https://playlist.megaphone.fm/?e=ADL2888934200"
+width="100%"></iframe>
+
+<br>
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+
+{% endblock %}
