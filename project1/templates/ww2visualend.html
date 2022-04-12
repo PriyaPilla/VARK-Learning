@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Visual
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center;">
+    World War II Visual Lesson
+</h1>
+<br><br>
+
+<h2 style="text-align:center;">How did World War II end?</h2><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/tJXh3QH/endwar1.png" alt="endwar1" title="The military campaign between Russian forces and those of Nazi Germany"></p>
+<h5 style="text-align:center">Battle of Stalingrad 8/1942 to 2/1943</h5><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/mRQx8md/endwar2.png" alt="endwar2" title="December 16, 1944, to January 25, 1945"></p>
+<h5 style="text-align:center">German forces launched a surprise attack on Allied forces in the forested Ardennes region in Belgium, Luxembourg, and France</h5><br>
+<br><br><p style="text-align:center;">
+    <iframe width="850" height="478" src="https://www.youtube.com/embed/7QYBaK6TPus" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p><br><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/gtS12KJ/endwar3.png" alt="endwar3" title="Adolf Hitler commits suicide in his underground bunker on 4/30/1945"></p>
+<h5 style="text-align:center">Germany lost Battle of the Bulge and Battle of Stalingrad</h5>
+<p style="text-align:center;"><img src="https://i.ibb.co/k4MXL8t/endwar4.png" alt="endwar4" title="Germany surrendered a week later 5/7/1945"></p>
+<h5 style="text-align:center">Germany surrendered a week later 5/7/1945</h5>
+<h5 style="text-align:center">World War II ended in Europe, but not in the Asian countries</h5><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/hRTJTjT/endwar5.png" alt="endwar5" title="8/6/1945"></p>
+<h5 style="text-align:center">Atomic Bombing of Hiroshima</h5><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/6DvcNsD/endwar6.png" alt="endwar6" title="Soviet Union declared war on Japan 8/8/1945"></p>
+<h5 style="text-align:center">3 days later: the atomic Bombing of Nagasaki</h5><br>
+<br><br><p style="text-align:center;">
+    <iframe width="850" height="478" src="https://www.youtube.com/embed/NMS_dzNUSTg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p><br><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/9bTwkM8/endwar7.png" alt="endwar7" title="With that, much loss and damage from the atomic bomb"></p>
+<h5 style="text-align:center">Japan surrendered through radio on 8/15/1945</h5><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/s1qfD8h/endwar8.png" alt="endwar8"></p>
+<h5 style="text-align:center">World War II officially ended</h5><br>
+<br><br><br><br>
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2visualtopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Topics</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+
+{% endblock %}

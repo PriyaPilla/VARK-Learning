@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Visual
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center;">
+    World War II Visual Course Topics
+</h1>
+<br><br>
+
+
+<form action="{{ url_for('ww2visualcauses') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Cause of World War II</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2visualtimeline') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Timeline of World War II</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2visualevents') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Major Events of World War II</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2visualend') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">How did World War II end?</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2visualaftermath') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary button1" style=width:50%;margin-left:25%;margin-right:25%;">Charts and Graphs of World War II's Aftermath</button>
+    </div>
+
+</form>
+
+<br><br><br><br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+
+{% endblock %}
