@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Visual
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center;">
+    World War II Visual Lesson
+</h1>
+<br><br>
+
+<h2 style="text-align:center;">Charts and Graphs of World War II's Aftermath</h2><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/D9mB2kk/chart1.png" alt="chart1"></p><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/6cQ72Fz/chart2.png" alt="chart2"></p><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/VtfL3cW/chart3.png" alt="chart3"></p><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/LRt4WRj/chart4.png" alt="chart4"></p><br>
+<p style="text-align:center;"><img src="https://i.ibb.co/K6qPB4c/chart5.png" alt="chart5"></p><br>
+<br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2visualtopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Topics</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+
+{% endblock %}

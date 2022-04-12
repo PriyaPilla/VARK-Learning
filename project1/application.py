@@ -172,6 +172,30 @@ def quizresults():
 def ww2visual():
     return render_template("ww2visual.html")
 
+@app.route("/ww2visualtopics", methods=["POST"]) 
+def ww2visualtopics():
+    return render_template("ww2visualtopics.html")
+
+@app.route("/ww2visualcauses", methods=["POST"]) 
+def ww2visualcauses():
+    return render_template("ww2visualcauses.html")
+
+@app.route("/ww2visualtimeline", methods=["POST"]) 
+def ww2visualtimeline():
+    return render_template("ww2visualtimeline.html")
+
+@app.route("/ww2visualevents", methods=["POST"]) 
+def ww2visualevents():
+    return render_template("ww2visualevents.html")
+
+@app.route("/ww2visualend", methods=["POST"]) 
+def ww2visualend():
+    return render_template("ww2visualend.html")
+
+@app.route("/ww2visualaftermath", methods=["POST"]) 
+def ww2visualaftermath():
+    return render_template("ww2visualaftermath.html")
+
 @app.route("/ww2aural", methods=["POST"]) 
 def ww2aural():
     return render_template("ww2aural.html")
