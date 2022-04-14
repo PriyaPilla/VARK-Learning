@@ -1,7 +1,8 @@
 #create pytest fixtures here
 
 import pytest
-# from project1 import create_app
+from project1.models import Student
+from project1.models import Instructor
 
 '''
 Fixtures should be created in tests/conftest.py.
@@ -42,11 +43,24 @@ def app():
 def client(app):
     return app.test_client()
 
-
-# @pytest.fixture(scope='module')
-# def new_student()
-
 #do we need this?
 @pytest.fixture()
 def runner(app):
     return app.test_cli_runner()
+
+@pytest.fixture(scope='module')
+def new_student():
+    student = Student()
+    student.id = 1
+    student.username = 'Us3rn@m3'
+    student.password = 'P@$$w0rd'
+    student.learning_style = 'Visual'
+    return student
+
+@pytest.fixture(scope='module')
+def new_instructor():
+    instructor = Instructor()
+    instructor.id = 2
+    instructor.username = 'Us3rn@m33'
+    instructor.password = 'P@$$w0rdd'
+    return instructor
