@@ -200,6 +200,57 @@ def ww2visualaftermath():
 def ww2aural():
     return render_template("ww2aural.html")
 
+@app.route("/ww2readwritetopics", methods=["POST"]) 
+def ww2readwritetopics():
+    return render_template("ww2readwritetopics.html")
+
+@app.route("/ww2readwritecauses", methods=["POST"]) 
+def ww2readwritecauses():
+    return render_template("ww2readwritecauses.html")
+
+@app.route("/ww2readwritetimeline", methods=["POST"]) 
+def ww2readwritetimeline():
+
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+    
+    notes = student.notes_timeline
+
+    if notes is None:
+        notes = ""
+    return render_template("ww2readwritetimeline.html", notes=notes)
+
+@app.route("/ww2readwriteevents", methods=["POST"]) 
+def ww2readwriteevents():
+    return render_template("ww2readwriteevents.html")
+
+@app.route("/ww2readwriteend", methods=["POST"]) 
+def ww2readwriteend():
+    return render_template("ww2readwriteend.html")
+
+@app.route("/ww2readwritestatistics", methods=["POST"]) 
+def ww2readwritestatistics():
+    return render_template("ww2readwritestatistics.html")
+
+@app.route("/notestimeline", methods=["POST"]) 
+def notestimeline():
+    #take notes value
+    notes = request.form.get("notes")
+
+    #put notes in notestimeline column in table
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+
+    student.notes_timeline = notes
+    db.session.commit()
+    
+    return render_template("ww2readwritetimeline.html", notes=notes)
+    
+
 @app.route("/home", methods=["POST"]) 
 def home():
     if "student_id" in session:
