@@ -3,6 +3,9 @@
 import pytest
 from project1.models import Student
 from project1.models import Instructor
+from tests.functional.test_recipes import create_app
+
+
 
 '''
 Fixtures should be created in tests/conftest.py.
@@ -48,6 +51,8 @@ def client(app):
 def runner(app):
     return app.test_cli_runner()
 
+# unit test setup below
+
 @pytest.fixture(scope='module')
 def new_student():
     student = Student()
@@ -64,3 +69,15 @@ def new_instructor():
     instructor.username = 'Us3rn@m33'
     instructor.password = 'P@$$w0rdd'
     return instructor
+
+# functional test setup below
+
+@pytest.fixture(scope='module')
+def test_client():
+    flask_app = create_app('flask_test.cfg')
+
+    # Create a test client using the Flask application configured for testing
+    with flask_app.test_client() as testing_client:
+        # Establish an application context
+        with flask_app.app_context():
+            yield testing_client  # this is where the testing happens!
