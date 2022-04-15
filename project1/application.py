@@ -206,7 +206,16 @@ def ww2readwritetopics():
 
 @app.route("/ww2readwritecauses", methods=["POST"]) 
 def ww2readwritecauses():
-    return render_template("ww2readwritecauses.html")
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+    
+    notes = student.notes_cause
+
+    if notes is None:
+        notes = ""
+    return render_template("ww2readwritecauses.html", notes=notes)
 
 @app.route("/ww2readwritetimeline", methods=["POST"]) 
 def ww2readwritetimeline():
@@ -224,15 +233,42 @@ def ww2readwritetimeline():
 
 @app.route("/ww2readwriteevents", methods=["POST"]) 
 def ww2readwriteevents():
-    return render_template("ww2readwriteevents.html")
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+    
+    notes = student.notes_events
+
+    if notes is None:
+        notes = ""
+    return render_template("ww2readwriteevents.html", notes=notes)
 
 @app.route("/ww2readwriteend", methods=["POST"]) 
 def ww2readwriteend():
-    return render_template("ww2readwriteend.html")
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+    
+    notes = student.notes_end
+
+    if notes is None:
+        notes = ""
+    return render_template("ww2readwriteend.html", notes=notes)
 
 @app.route("/ww2readwritestatistics", methods=["POST"]) 
 def ww2readwritestatistics():
-    return render_template("ww2readwritestatistics.html")
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+    
+    notes = student.notes_statistics
+
+    if notes is None:
+        notes = ""
+    return render_template("ww2readwritestatistics.html", notes=notes)
 
 @app.route("/notestimeline", methods=["POST"]) 
 def notestimeline():
@@ -249,6 +285,70 @@ def notestimeline():
     db.session.commit()
     
     return render_template("ww2readwritetimeline.html", notes=notes)
+
+@app.route("/notescauses", methods=["POST"]) 
+def notescauses():
+    #take notes value
+    notes = request.form.get("notes")
+
+    #put notes in notestimeline column in table
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+
+    student.notes_cause = notes
+    db.session.commit()
+    
+    return render_template("ww2readwritecauses.html", notes=notes)
+
+@app.route("/notesend", methods=["POST"]) 
+def notesend():
+    #take notes value
+    notes = request.form.get("notes")
+
+    #put notes in notestimeline column in table
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+
+    student.notes_end = notes
+    db.session.commit()
+    
+    return render_template("ww2readwriteend.html", notes=notes)
+
+@app.route("/notesevents", methods=["POST"]) 
+def notesevents():
+    #take notes value
+    notes = request.form.get("notes")
+
+    #put notes in notestimeline column in table
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+
+    student.notes_events = notes
+    db.session.commit()
+    
+    return render_template("ww2readwriteevents.html", notes=notes)
+
+@app.route("/notesstatistics", methods=["POST"]) 
+def notesstatistics():
+    #take notes value
+    notes = request.form.get("notes")
+
+    #put notes in notestimeline column in table
+    if "student_id" in session:
+        student_id = int(session["student_id"])
+    
+    student = Student.query.filter_by(id = student_id).first()
+
+    student.notes_statistics = notes
+    db.session.commit()
+    
+    return render_template("ww2readwritestatistics.html", notes=notes)
     
 
 @app.route("/home", methods=["POST"]) 
