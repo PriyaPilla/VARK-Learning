@@ -5,26 +5,33 @@
 {% endblock %}
 
 {% block body %}
-    <h1>
+
+<div class="transbox">
+    <h1 style="width:50%;margin-left:25%;margin-right:25%;">
 
         Hello Student!
 
     </h1>
 
+    <br><br>
+
     <form action="{{ url_for('registerstudent') }}" method="post">
 
         <div class="form-group">
-            <button class="btn btn-primary">Sign up as Student</button>
+            <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Sign up as Student</button>
         </div>
 
     </form>
+
+    <br><br>
 
     <form action="{{ url_for('loginstudent') }}" method="post">
 
         <div class="form-group">
-            <button class="btn btn-primary">Login as Student</button>
+            <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Login as Student</button>
         </div>
 
     </form>
+</div>
 
 {% endblock %}
