@@ -1,13 +1,30 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Read/Write Result
+    Reading/Writing Result
 {% endblock %}
 
 {% block body %}
 
-<h1>
-    Read/Write Learner
+<h1 style="text-align:center;">
+    Reading/Writing Learner
 </h1>
+<br><br>
+<h4 style="text-align:center;">What is a Reading/Writing learning style? And how do we maximize the potential of studying and memorizing for its user?</h4>
+<p style="text-align:center;"><img src="https://www.workreadytraining.com.au/Content/Images/uploaded/Blog/Read%20Write%20Learner%20Infographic.png" alt="Visual Learner" width="600" height="800"></p>
 
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2readwritetopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Topics</button>
+    </div>
+
+</form>
 {% endblock %}

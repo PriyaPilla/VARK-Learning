@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Reading/Writing
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center;">
+    World War II Reading/Writing Lesson
+</h1>
+<br><br>
+
+<h5 style="text-align:center;">Timeline of World War II</h5>
+<br><br>
+<p>
+    <ul>
+        <li><strong>September 1, 1939</strong> <mark>Germany invades Poland</mark>, initiating World War II in Europe.</li>
+        <li><strong>September 3, 1939</strong> Honoring their guarantee of Poland’s borders, Great Britain and France declare war on Germany.</li>
+        <li><strong>September 17, 1939</strong> <mark>The Soviet Union invades Poland</mark> from the east. The Polish government flees into exile via Romania, 
+            first to France and then later to Great Britain. 
+            </li>
+        <li><strong>September 27–29, 1939</strong> Warsaw surrenders on September 27. Germany and the Soviet Union divide Poland between them.</li>
+        <li><strong>April 9, 1940–June 9, 1940</strong> <mark>Germany invades Denmark and Norway</mark>. Denmark surrenders on the day of the attack. </li>
+        <li><strong>June 10, 1940</strong> <mark>Italy enters the war</mark>. Italy invades southern France on June 21.</li>
+        <li><strong>June 28, 1940</strong> The Soviet Union forces Romania to cede the eastern province of Bessarabia and the northern half of Bukovina to Soviet Ukraine.</li>
+        <li><strong>December 7, 1941</strong> Japan bombs Pearl Harbor.</li>
+        <li><strong>December 8, 1941</strong> <mark>The United States declares war on Japan</mark>, entering World War II.</li>
+        <li><strong>December 11–13, 1941</strong> Nazi Germany and its Axis partners declare war on the United States.</li>
+        <li><strong>June 1942</strong> The US Navy halts the Japanese naval advance in the central Pacific at Midway.</li>
+        <li><strong>May 13, 1943</strong> Axis forces in Tunisia surrender to the Allies, ending the North African campaign.</li>
+        <li><strong>July 5, 1943</strong> The Germans launch a massive tank offensive near Kursk in the Soviet Union. The Soviets blunt the attack 
+            within a week and begin an offensive initiative of their own.
+            </li>
+        <li><strong>July 10, 1943</strong> US and British troops land on Sicily. By mid-August, the Allies control Sicily.</li>
+        <li><strong>September 9, 1943</strong> Allied troops land on the beaches of Salerno near Naples.</li>
+        <li><strong>September 4, 1944</strong> <mark>Finland</mark> agrees to <mark>sign an armistice with the Soviet Union</mark> and to expel German forces.</li>
+        <li><strong>December 16, 1944</strong> The Germans launch a final offensive in the west, known as the <mark>Battle of the Bulge</mark></li>
+        <li><strong>April 4, 1945</strong> The capture of Bratislava forces <mark>Slovakia</mark> to <mark>surrender</mark>.</li>
+        <li><strong>April 13, 1945</strong> <mark>Soviet</mark> forces <mark>capture Vienna</mark>. </li>
+        <li><strong>April 16, 1945</strong> The Soviets launch their final offensive, encircling Berlin.</li>
+        <li><strong>April 30, 1945</strong> <mark>Hitler</mark> commits <mark>suicide</mark></li>
+        <li><strong>May 7–8, 1945</strong> <mark>Germany signs an unconditional surrender</mark> at the headquarters of US General Dwight D. Eisenhower, 
+            Commander of Allied forces in northwest Europe, at Reims on May 7.
+            </li>
+        <li><strong>May 8, 1945</strong> <mark>Germany signs a second, very similar, document of surrender in Berlin.</mark></li>
+        <li><strong>May 1945</strong> <mark>Allied</mark> troops <mark>conquer Okinawa</mark>, the last island stop before the main Japanese islands.</li>
+        <li><strong>August 6, 1945</strong> <mark>The United States</mark> drops an <mark>atomic bomb</mark> on <mark>Hiroshima, Japan</mark></li>
+        <li><strong>August 8, 1945</strong> <mark>The Soviet Union</mark> declares <mark>war</mark> on <mark>Japan</mark> and invades Manchuria.</li>
+        <li><strong>August 9, 1945</strong> <mark>The United States</mark> drops an <mark>atomic bomb</mark> on <mark>Nagasaki, Japan</mark>.</li>
+        <li><strong>September 2, 1945</strong> Having agreed in principle to <mark>unconditional surrender</mark> on August 14, 1945, <mark>Japan</mark> formally <mark>surrenders</mark>, 
+            ending World War II.
+            </li>
+
+    </ul>
+</p>
+<br><br>
+<h5>Take Notes:</h5>
+<br>
+<form action="{{ url_for('notestimeline') }}" method="post">
+
+    <div class="form-group">
+        <textarea class="form-control" rows="4" cols="50" name="notes" placeholder="Write note...">{{notes}}</textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>
+
+<br><br><br><br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2readwritetopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Topics</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+
+{% endblock %}
