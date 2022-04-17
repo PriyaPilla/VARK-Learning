@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Reading/Writing
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center;">
+    World War II Reading/Writing Lesson
+</h1>
+<br><br>
+
+<h5 style="text-align:center;">How Did World War II End?</h5>
+<br><br>
+<p>
+    <ul>
+        <li>After storming across Europe in the first three years of the war, overextended <mark>Axis forces were put on the defensive</mark> 
+            after the Soviet Red Army rebuffed them in the brutal <mark>Battle of Stalingrad</mark> which lasted from <strong>August 1942 to February 1943</strong>
+            </li>
+        <li>American forces withstood the full might of what was left of Germany’s power but <mark>lost approximately 20,000 men</mark> in 
+            what was their deadliest single battle in World War II. What became known as the <mark>Battle of Bulge</mark> would turn out to be 
+            <mark>Germany’s last gasp in 1944</mark>
+            </li>
+        <li>With both battles collapsing and defeat inevitable, <mark>Hitler committed suicide</mark> in his bunker deep below the Reich
+            Chancellery on <strong>April 30, 1945</strong>           
+            </li>
+        <li>Hitler’s successor, Grand Admiral Karl Dönitz, started peace negotiations and on <strong>May 7</strong> authorized General Alfred Jodl to
+            <mark>sign an unconditional surrender</mark> of all German forces to take effect the following day. This day marks the end of WW2 in Europe.
+            </li>
+        <li>Even though <mark>the war was officially at an end in the Far East</mark> the war raged on, claiming more lives. </li>
+        <li><mark>Japan, did not surrender</mark> at the same time as Germany. It was able to hold out for another few months. <mark>Atomic bombs</mark>
+            were dropped on Hiroshima and Nagasaki on <strong>August 6 and 9</strong> respectively.</li>
+        <li>After that, the Imperial government sought the <mark>Emperor's personal authority to surrender</mark> which he granted. He made a 
+            personal radio address announcing the decision.
+            </li>
+        <li>Having agreed in principle to an unconditional surrender on <strong>15 August 1945</strong>, <mark>Japan formally surrenders, ending 
+            World War II</mark> throughout the rest of the world.</li>
+        
+
+    </ul>
+</p>
+<br><br>
+<h5>Take Notes:</h5>
+<br>
+<form action="{{ url_for('notesend') }}" method="post">
+
+    <div class="form-group">
+        <textarea class="form-control" rows="4" cols="50" name="notes" placeholder="Write note...">{{notes}}</textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>
+
+<br><br><br><br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2readwritetopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Topics</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Reading/Writing
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center;">
+    World War II Reading/Writing Lesson
+</h1>
+<br><br>
+
+<h5 style="text-align:center;">Major Events</h5>
+<br><br>
+<p>
+    <ul>
+        <li><strong>1/30/1933</strong> <mark>Adolf Hitler</mark> becomes <mark>chancellor of Germany</mark> and later assumes dictatorial powers. 
+            German rearmament takes off.
+            </li>
+        <li><strong>9/1/1933</strong> <mark>Germany invades Poland</mark>, inciting Poland’s allies Britain and France to declare war on Germany.</li>
+        <li><strong>12/13/1939</strong> <mark>British cruisers defeat a German</mark> pocket battleship at the <mark>Battle of the River Plate</mark>, the first major 
+            naval engagement of World War II.            
+            </li>
+        <li><strong>5/10/1940</strong> <mark>Winston Churchill</mark> replaces <mark>Neville Chamberlain</mark> as <mark>British Prime Minister. </mark>. The same day, Germany invades Belgium.
+            The same day, Germany invades Belgium.
+            </li>
+        <li><strong>6/14/1940</strong> <mark>Paris falls to German forces</mark>. France capitulates 11 days later. </li>
+        <li><strong>December 11, 1941</strong> <mark>Germany and Italy</mark> declare <mark>war</mark> on the <mark>United States</mark>.</li>
+        <li><strong>August 19, 1942</strong> <mark>The battle for Stalingrad</mark> begins as Germany pushes further into Russia.</li>
+        <li><strong>August 6, 1945</strong> The <mark>first atomic bomb</mark> used in warfare, nicknamed <mark>Little Boy</mark>, is dropped on the Japanese city of <mark>Hiroshima</mark>, 
+            killing up to <mark>140,000 people</mark>.</li>
+        <li><strong>August 9, 1945</strong> After getting no response from the Japanese government after the Hiroshima bombing, a <mark>second atomic bomb</mark>, 
+            nicknamed <mark>Fat Man</mark>, is dropped on Nagasaki, killing up to <mark>80,000 people</mark>.</li>
+        
+
+    </ul>
+</p>
+<br><br>
+<h5>Take Notes:</h5>
+<br>
+<form action="{{ url_for('notesevents') }}" method="post">
+
+    <div class="form-group">
+        <textarea class="form-control" rows="4" cols="50" name="notes" placeholder="Write note...">{{notes}}</textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>
+
+<br><br><br><br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2readwritetopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Topics</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+
+{% endblock %}

@@ -1,49 +1,49 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    WW2 Visual
+    WW2 Reading/Writing
 {% endblock %}
 
 {% block body %}
 
 <h1 style="text-align:center;">
-    World War II Visual Course Topics
+    World War II Reading/Writing Course Topics
 </h1>
 <br><br>
 
 
-<form action="{{ url_for('ww2visualcauses') }}" method="post">
+<form action="{{ url_for('ww2readwritecauses') }}" method="post">
 
     <div class="form-group">
         <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Causes</button>
     </div>
 
 </form>
-<form action="{{ url_for('ww2visualtimeline') }}" method="post">
+<form action="{{ url_for('ww2readwritetimeline') }}" method="post">
 
     <div class="form-group">
         <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Timeline</button>
     </div>
 
 </form>
-<form action="{{ url_for('ww2visualevents') }}" method="post">
+<form action="{{ url_for('ww2readwriteevents') }}" method="post">
 
     <div class="form-group">
         <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Major Events</button>
     </div>
 
 </form>
-<form action="{{ url_for('ww2visualend') }}" method="post">
+<form action="{{ url_for('ww2readwriteend') }}" method="post">
 
     <div class="form-group">
         <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Ending</button>
     </div>
 
 </form>
-<form action="{{ url_for('ww2visualaftermath') }}" method="post">
+<form action="{{ url_for('ww2readwritestatistics') }}" method="post">
 
     <div class="form-group">
-        <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Charts and Graphs</button>
+        <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Statistics</button>
     </div>
 
 </form>

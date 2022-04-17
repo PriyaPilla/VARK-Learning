@@ -5,25 +5,35 @@
 {% endblock %}
 
 {% block body %}
-    <h1>
+
+<div class="transbox">
+    <br><br>
+
+    <h1 style="text-align:center;">
 
         WELCOME TO VARK LEARNING!
 
     </h1>
 
+    <br><br>
+
     <form action="{{ url_for('instructor') }}" method="post">
 
         <div class="form-group">
-            <button class="btn btn-primary">Instructor</button>
+            <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Instructor</button>
         </div>
 
     </form>
+
+    <br><br>
+
     <form action="{{ url_for('student') }}" method="post">
 
         <div class="form-group">
-            <button class="btn btn-primary">Student</button>
+            <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Student</button>
         </div>
 
     </form>
 
+</div>
 {% endblock %}

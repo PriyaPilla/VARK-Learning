@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Reading/Writing
+{% endblock %}
+
+{% block body %}
+<div class="transbox">
+<h1 style="text-align:center;">
+    World War II Reading/Writing Lesson
+</h1>
+<br><br>
+
+<h2 style="text-align:center;">Cause of World War II</h2><br>
+<p style="text-align:center;">
+    <ul>
+    <li>The instability created in Europe by the <mark>First World War (1914-18)</mark> the stage for another international conflict—<mark>World War II</mark>—which broke out <mark>two decades later</mark>> and would prove even more devastating. </li>
+    <li>Rising to power in an economically and <mark>politically unstable Germany, Adolf Hitler, leader of the Nazi Party</mark>, rearmed the nation and signed strategic treaties with Italy and Japan to further his ambitions of world domination. </li>
+    <li><mark>Hitler’s invasion of Poland in September 1939 drove Great Britain and France to declare war on Germany, marking the beginning of World War II.</mark> Over the next six years, the conflict would take more lives and destroy more land and property around the globe than any previous war. </li>
+    <li>Among the estimated, 45-60 million people killed were 6 million Jews murdered in Nazi concentration camps as part of Hitler’s diabolical “Final Solution,” now known as the Holocaust.</li>
+    <li>Axis powers—<mark>Germany, Italy, and Japan</mark></li>
+    <li>Allies—<mark>France, Great Britain, the United States, the Soviet Union, and, to a lesser extent, China</mark></li>
+    </ul>
+</p>
+<br><br>
+<h5 style="text-align:center;">Main Leaders</h5>
+<br>
+<table style="margin-left: auto; margin-right: auto; text-align:center;">
+    <tr>
+      <th>Country</th>
+      <th>Leader</th>
+    </tr>
+    <tr>
+      <td>France</td>
+      <td>Charles de Gaulle</td>
+    </tr>
+    <tr>
+        <td>Germany</td>
+        <td>Adolf Hitler</td>
+    </tr>
+    <tr>
+        <td>Italy</td>
+        <td>Benito Mussolini</td>
+    </tr>
+    <tr>
+        <td>Japan</td>
+        <td>Emperor Hirohito</td>
+    </tr>
+    <tr>
+        <td>Russia</td>
+        <td>Josef Stalin</td>
+    </tr>
+    <tr>
+        <td>United Kingdom</td>
+        <td>Neville Chamberlain and Winston Churchill</td>
+    </tr>
+    <tr>
+        <td>United States</td>
+        <td>Franklin Roosevelt and Harry Truman</td>
+    </tr>
+  </table>
+
+  <br><br>
+  <h5>Take Notes:</h5>
+  <br>
+  <form action="{{ url_for('notescauses') }}" method="post">
+  
+      <div class="form-group">
+          <textarea class="form-control" rows="4" cols="50" name="notes" placeholder="Write note...">{{notes}}</textarea>
+      </div>
+      <div class="form-group">
+          <button class="btn btn-primary">Save</button>
+      </div>
+  </form>
+<br><br><br><br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2readwritetopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Topics</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+</div>
+{% endblock %}

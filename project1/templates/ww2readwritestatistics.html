@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Reading/Writing
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center;">
+    World War II Reading/Writing Lesson
+</h1>
+<br><br>
+
+<h5 style="text-align:center;">Statistics</h5>
+<br><br>
+<p style="text-align:center;">
+    <ul style="text-align:center;">
+        <li>Australia: 23,365 dead; 39,803 wounded</li>
+        <li>Austria: 380,000 dead; 350,117 wounded</li>
+        <li>Belgium: 7,760 dead; 14,500 wounded</li>
+        <li>Bulgaria: 10,000 dead; 21,878 wounded</li>
+        <li>Canada: 37,476 dead; 53,174 wounded</li>
+        <li><mark>China: 2,200,000 dead</mark>; 1,762,000 wounded</li>
+        <li>France: 210,671 dead; 390,000 wounded</li>
+        <li><mark>Germany: 3,500,000 dead</mark>; 7,250,000 wounded</li>
+        <li>Great Britain: 329,208 dead; 348,403 wounded</li>
+        <li>Hungary: 140,000 dead; 89,313 wounded</li>
+        <li><mark>Italy: 77,494 dead</mark>; 120,000 wounded</li>
+        <li><mark>Japan: 1,219,000 dead</mark>; 295,247 wounded</li>
+        <li>Poland: 320,000 dead; 530,000 wounded</li>
+        <li>Romania: 300,000 dead; wounded unknown</li>
+        <li><mark>Soviet Union: 7,500,000 dead</mark>; 5,000,000 wounded</li>
+        <li><mark>United States: 405,399 dead</mark>; 670,846 wounded</li>
+        <li><mark>Six million Jewish people died in Nazi concentration camps during the war. Also killed were hundreds of thousands of Roma people and people with mental or physical disabilities.</mark></li>
+
+        
+
+    </ul>
+</p>
+<br><br>
+<h5>Take Notes:</h5>
+<br>
+<form action="{{ url_for('notesstatistics') }}" method="post">
+
+    <div class="form-group">
+        <textarea class="form-control" rows="4" cols="50" name="notes" placeholder="Write note...">{{notes}}</textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>
+
+<br><br><br><br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2readwritetopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Topics</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+
+{% endblock %}
