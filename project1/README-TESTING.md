@@ -6,7 +6,7 @@ The contents I used are below:
 
 {
     "python.testing.pytestArgs": [
-        "."
+        "project1"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
