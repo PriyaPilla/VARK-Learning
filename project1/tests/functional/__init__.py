@@ -1,26 +1,31 @@
-# added this from website that wasn't working to get pytest in
-# couldn't find create_app
-import pytest
-# from project1.application import app
-from application import app
+'''
+NEEDED??? COMMENTED OUT AND DIDN'T CHANGE 9/9 TESTS PASSING
+'''
 
-"""Initialize the testing environment
 
-Creates an app for testing that has the configuration flag ``TESTING`` set to
-``True``.
+# # added this from website that wasn't working to get pytest in
+# # couldn't find create_app
+# import pytest
+# # from project1.application import app
+# from application import app
 
-"""
+# """Initialize the testing environment
 
-@pytest.fixture
-def client():
-    """Configures the app for testing
+# Creates an app for testing that has the configuration flag ``TESTING`` set to
+# ``True``.
 
-    Sets app config variable ``TESTING`` to ``True``
+# """
 
-    :return: App for testing
-    """
+# @pytest.fixture
+# def client():
+#     """Configures the app for testing
 
-    app.config['TESTING'] = True
-    client = app.test_client()
+#     Sets app config variable ``TESTING`` to ``True``
 
-    yield client
+#     :return: App for testing
+#     """
+
+#     app.config['TESTING'] = True
+#     client = app.test_client()
+
+#     yield client
