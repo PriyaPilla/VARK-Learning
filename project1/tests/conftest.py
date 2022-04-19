@@ -4,9 +4,6 @@ import pytest
 from models import Student
 from models import Instructor
 #from functional.test_recipes import create_app
-#from test_recipes.py import create_app
-
-
 
 '''
 Fixtures should be created in tests/conftest.py.
@@ -62,6 +59,20 @@ def new_student():
     student.password = 'P@$$w0rd'
     student.learning_style = 'Visual'
     return student
+
+@pytest.fixture(scope='module')
+def new_student_2():
+    student_2 = Student()
+    student_2.id = 2
+    student_2.username = 'Us3rn@m3Us3rn@m3'
+    student_2.password = 'P@$$w0rdP@$$w0rd'
+    student_2.learning_style = 'Kinesthetic'
+    student_2.notes_timeline = 'timeline'
+    student_2.notes_cause = 'cause'
+    student_2.notes_end = 'end'
+    student_2.notes_events = 'events'
+    student_2.notes_statistics = 'stats'
+    return student_2
 
 @pytest.fixture(scope='module')
 def new_instructor():
