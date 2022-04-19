@@ -1,1 +1,0 @@
-# contains the view functions for the recipes blueprint
