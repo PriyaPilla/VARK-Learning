@@ -1,8 +1,7 @@
 
 import os, requests, json
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for, escape
-# from models import *
-from project1.models import *
+from models import *
 from sqlalchemy import exc
 
 app = Flask(__name__)
