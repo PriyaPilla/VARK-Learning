@@ -1,9 +1,10 @@
 #create pytest fixtures here
 
 import pytest
-from project1.models import Student
-from project1.models import Instructor
-from tests.functional.test_recipes import create_app
+from models import Student
+from models import Instructor
+#from functional.test_recipes import create_app
+#from test_recipes.py import create_app
 
 
 

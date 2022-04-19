@@ -1,7 +1,10 @@
 # added this from website that wasn't working to get pytest in
-# couldn't find create_app
+# couldn't find pytest bc no import of pytest before
 import pytest
-from project1.application import app
+#from project1 import app
+# from project1.application import app
+from application import app
+
 
 """Initialize the testing environment
 
