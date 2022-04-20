@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Kinesthetic
+{% endblock %}
+
+{% block body %}
+<div class="transbox">
+<h1 style="text-align:center;">
+    World War II Kinesthetic Lesson
+</h1>
+<br><br>
+
+<h2 style="text-align:center;">Salute to Service Plaque Project</h2><br>
+
+<p style="text-align:center;">If you teach US History, it's very likely that your state standards include the ways varied groups contributed to the war effort. The most common include:</p>
+
+<p>
+    <ul style="text-align: center;list-style-position: inside;">
+        <li>Women aka Rosie the Riveter</li>
+        <li>Japanese American Nisei soldiers</li>
+        <li>African Americans and the Tuskegee Airmen</li>
+        <li>American Indians and the Navajo Code Talkers</li>
+    </ul>
+</p>
+<br>
+
+<p style="text-align:center;">In this lesson on these groups, kids read about each group and create honorary plaques to recognize their actions either on the homefront or abroad during the war. </p><br>
+
+<p style="text-align:center;"><img src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/blogs/7919/images/WRmLBhWZSi0pnk1vKPoi_wwii_project_8th.jpg" alt="project" width="600" height="500"></p><br>
+
+<p style="text-align:center;">The activity includes 1-page readings on each group along with plaque templates that students can complete by hand or by using the Google Drive digital versions.
+</p>
+
+
+<br><br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2kinesthetictopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Activities</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+</div>
+{% endblock %}
