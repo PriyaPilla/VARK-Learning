@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block body %}
+
+<div class="transbox" style="text-align:center;">
     <!--added Title here-->
-    <title>Learning Styles Quiz</title>
+    <title >Learning Styles Quiz</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
@@ -16,10 +18,10 @@
     </h1>
 
     <!--insert code for quiz link and user input result-->
-    <a href="https://vark-learn.com/the-vark-questionnaire/" target="_blank"><h3>Click here to take the quiz</h3></a>
+    <a href="https://vark-learn.com/the-vark-questionnaire/" target="_blank"><h3 style="text-align:center;">Click here to take the quiz</h3></a>
 
-    <p><h4>Select your learning style given by the quiz results.</h4></p>
-    <p><h5>If you get a Multimodal result, select the learning style you rank highest with or desire the most.</h5></p>
+    <p><h4 style="text-align:center;">Select your learning style given by the quiz results.</h4></p>
+    <p><h5 style="text-align:center;">If you get a Multimodal result, select the learning style you rank highest with or desire the most.</h5></p>
     
     <form action="{{ url_for('quizresults') }}" method="post">
         
@@ -39,7 +41,7 @@
     
 
         <div class="form-group">
-            <button class="btn btn-primary">Submit Result</button>
+            <button class="btn btn-primary" style="text-align:center;">Submit Result</button>
         </div>
 
     </form>
@@ -48,9 +50,9 @@
     <form action="{{ url_for('logoutstudent') }}" method="post">
 
         <div class="form-group">
-            <button class="btn btn-primary">Logout</button>
+            <button class="btn btn-primary" style="text-align:center;">Logout</button>
         </div>
 
     </form>
-
+</div>
 {% endblock %}
