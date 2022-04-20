@@ -5,9 +5,13 @@
 {% endblock %}
 
 {% block body %}
+
+<div class="transbox">
     <h1>
         Sign up complete!
     </h1>
+
+    <br>
 
     <form action="{{ url_for('loginstudent') }}" method="post">
 
@@ -17,5 +21,5 @@
 
     </form>
 
-    
+</div>
 {% endblock %}

@@ -25,10 +25,5 @@ class Student(db.Model):
     notes_events = db.Column(db.String, nullable=True)
     notes_statistics = db.Column(db.String, nullable=True)
 
-class Instructor(db.Model):
-    __tablename__ = "instructor"
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String, nullable=False)
-    password = db.Column(db.String, nullable=False)
 
 

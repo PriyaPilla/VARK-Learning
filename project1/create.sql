@@ -1,11 +1,3 @@
-CREATE TABLE books(
-    id SERIAL PRIMARY KEY,
-    isbn VARCHAR NOT NULL,
-    title VARCHAR NOT NULL,
-    author VARCHAR NOT NULL,
-    publicationyear INTEGER NOT NULL
-);
-
 CREATE TABLE student(
     id SERIAL PRIMARY KEY,
     username VARCHAR NOT NULL,
@@ -16,10 +8,4 @@ CREATE TABLE student(
     notes_end VARCHAR NULL,
     notes_events VARCHAR NULL,
     notes_statistics VARCHAR NULL
-);
-
-CREATE TABLE instructor(
-    id SERIAL PRIMARY KEY,
-    username VARCHAR NOT NULL,
-    password VARCHAR NOT NULL
 );
