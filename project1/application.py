@@ -166,6 +166,19 @@ def ww2visualend():
 def ww2visualaftermath():
     return render_template("ww2visualaftermath.html")
 
+@app.route("/ww2kinesthetictopics", methods=["POST"]) 
+def ww2kinesthetictopics():
+    return render_template("ww2kinesthetictopics.html")
+
+@app.route("/ww2kinestheticmedia", methods=["POST"]) 
+def ww2kinestheticmedia():
+    return render_template("ww2kinestheticmedia.html")
+
+@app.route("/ww2kinestheticsalute", methods=["POST"]) 
+def ww2kinestheticsalute():
+    return render_template("ww2kinestheticsalute.html")
+
+
 @app.route("/ww2aural", methods=["POST"]) 
 def ww2aural():
     return render_template("ww2aural.html")

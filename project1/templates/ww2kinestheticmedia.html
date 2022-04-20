@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Kinesthetic
+{% endblock %}
+
+{% block body %}
+<div class="transbox" style="text-align:center;">
+<h1 style="text-align:center;">
+    World War II Kinesthetic Lesson
+</h1>
+<br><br>
+
+<h2 style="text-align:center;">Media Broadcast</h2><br>
+
+<p style="text-align:center;"><img src="https://www.tieronepr.com/hubfs/An%20Inside%20Look%20at%20Pitching%20Broadcast%20Media.jpg" alt="Media Broadcast" width="600" height="400"></p><br>
+
+<p style="text-align:center;">Media broadcasts were a big part of World War II and worked to keep those at home updated about happenings on both fronts. Because TV was not available, print, radio and newsreels were the main sources of information. Students can create their own broadcast by selecting an important day in the war and report about it as if they are there. Report from the front lines of a battle, or relay to the United States the bombing of Pearl Harbor, the possibilities are vast and almost unending. These shows can be done live, or recorded and played for the class. Clips from actual broadcasts are widely available online, and may provide valuable information about journalistic style of the day.
+</p>
+
+
+<br><br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2kinesthetictopics') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Course Activities</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+</div>
+{% endblock %}

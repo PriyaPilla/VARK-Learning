@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WW2 Kinesthetic
+{% endblock %}
+
+{% block body %}
+
+<div class="transbox" style="text-align:center;">
+<h1 style="text-align:center;">
+    World War II Kinesthetic Course Activites
+</h1>
+<br><br>
+
+
+<form action="{{ url_for('ww2kinestheticmedia') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Media Broadcast</button>
+    </div>
+
+</form>
+<form action="{{ url_for('ww2kinestheticsalute') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary button1" style="width:50%;margin-left:25%;margin-right:25%;">Salute to Service Plaque Project</button>
+    </div>
+
+</form>
+
+<br><br><br><br>
+
+
+<form action="{{ url_for('logoutstudent') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Logout</button>
+    </div>
+
+</form>
+<form action="{{ url_for('home') }}" method="post">
+
+    <div class="form-group">
+        <button class="btn btn-primary" style="width:50%;margin-left:25%;margin-right:25%;">Home</button>
+    </div>
+
+</form>
+</div>
+
+{% endblock %}
