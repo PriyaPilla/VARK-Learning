@@ -1,8 +1,14 @@
+#MAKES CLIENT AVAILABLE TO ALL TESTS UNDER WEBAPP DIRECTORY
+
 # couldn't find pytest bc no import of pytest before
+
 import pytest
 #from project1 import app
-#from project1.application import app
+# from project1.application import app
 from application import app
+# from . import app
+# from project1.tests import app
+# from instance import app
 
 """Initialize the testing environment
 

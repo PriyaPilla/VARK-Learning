@@ -1,9 +1,14 @@
 #create pytest fixtures here
 
 import pytest
-from models import Student
-from models import Instructor
+
+# from models import Student
+from project1.models import Student
+# from models import Instructor
+from project1.models import Instructor
 #from functional.test_recipes import create_app
+from . import create_app
+# from tests import create_app
 
 '''
 Fixtures should be created in tests/conftest.py.
@@ -26,18 +31,18 @@ Source: https://testdriven.io/blog/flask-pytest/
 
 '''
 
-# @pytest.fixture()
-# def app():
-#      app = create_app()
-#      app.config.update({
-#          "TESTING": True,
-#      })
+@pytest.fixture()
+def app():
+     app = create_app()
+     app.config.update({
+         "TESTING": True,
+     })
 
-#     # other setup can go here
+    # other setup can go here
 
-#      yield app
+     yield app
 
-#     # clean up / reset resources here
+    # clean up / reset resources here
 
 
 @pytest.fixture()
@@ -81,15 +86,16 @@ def new_instructor():
     instructor.username = 'Us3rn@m33'
     instructor.password = 'P@$$w0rdd'
     return instructor
+'''
+functional test setup below
+'''
 
-# functional test setup below
+@pytest.fixture(scope='module')
+def test_client():
+    flask_app = create_app('flask_test.cfg')
 
-# @pytest.fixture(scope='module')
-# def test_client():
-#     flask_app = create_app('flask_test.cfg')
-
-#     # Create a test client using the Flask application configured for testing
-#     with flask_app.test_client() as testing_client:
-#         # Establish an application context
-#         with flask_app.app_context():
-#             yield testing_client  # this is where the testing happens!
+    # Create a test client using the Flask application configured for testing
+    with flask_app.test_client() as testing_client:
+        # Establish an application context
+        with flask_app.app_context():
+            yield testing_client  # this is where the testing happens!

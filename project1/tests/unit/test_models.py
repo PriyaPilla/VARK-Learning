@@ -1,5 +1,7 @@
 from models import Student
+# from project1.models import Student
 from models import Instructor
+# from project1.models import Instructor
 
 def test_new_blank_student():
     """
@@ -96,8 +98,3 @@ def test_new_instructor_with_fixture(new_instructor):
      assert new_instructor.username == 'Us3rn@m33'
      assert new_instructor.password == 'P@$$w0rdd'
      assert new_instructor.__tablename__ == 'instructor'
-    
-
-    
-
-    
