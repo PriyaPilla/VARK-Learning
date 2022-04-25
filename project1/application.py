@@ -4,13 +4,14 @@ from flask import Flask, render_template, jsonify, request, session, redirect, u
 from models import *
 from sqlalchemy import exc
 
+#DB setup
 app = Flask(__name__)
 app.secret_key = "any random string"
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://mfjobdlqdvmjef:6068e27eae9bd7d5ab31e8a03ff6385872ba0f1d7ea5fa07d0e5e1fac58ab814@ec2-54-236-169-55.compute-1.amazonaws.com:5432/ddvh3o0nq9l139"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
-
+#starting page
 @app.route("/")
 def index():
     if "student_id" in session:
@@ -19,7 +20,7 @@ def index():
         session.pop("instructor_id", None)
     return render_template("index.html")
 
-
+#student page
 @app.route("/student", methods=["POST"])
 def student():
     return render_template("student.html")
@@ -29,7 +30,7 @@ def student():
 def registerstudent():
     return render_template("registerstudent.html")
 
-
+#adds student's username and password to DB table
 @app.route("/registrationcompletestudent", methods=["POST"])
 def registrationcompletestudent():
    
@@ -48,7 +49,8 @@ def loginstudent():
     
     return render_template("loginstudent.html")
 
-
+#if credentials wrongs, shows error message
+#if quiz already taken, redirects to learning style page
 @app.route("/quiz", methods=["POST"]) 
 def quiz():
     if "student_id" not in session:
@@ -81,10 +83,7 @@ def quiz():
         
     return render_template("quiz.html")
 
-# create function/url that quiz form submits to. 
-# this function could include if statements with matching learning styles to the student input
-# where the quiz code should go after the user submits from quiz.html 
-#comment for merge issues - something to add
+#function that quiz form submits to. 
 @app.route("/quizresults", methods=["POST"])
 def quizresults():
 
@@ -187,6 +186,7 @@ def ww2aural():
 def ww2readwritetopics():
     return render_template("ww2readwritetopics.html")
 
+#redirects to causes page, also gets notes from DB table
 @app.route("/ww2readwritecauses", methods=["POST"]) 
 def ww2readwritecauses():
     if "student_id" in session:
@@ -333,7 +333,7 @@ def notesstatistics():
     
     return render_template("ww2readwritestatistics.html", notes=notes)
     
-
+#goes to home page of learning style
 @app.route("/home", methods=["POST"]) 
 def home():
     if "student_id" in session:
