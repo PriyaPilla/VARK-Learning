@@ -1,5 +1,4 @@
 #creates tables from models.py
-
 import os
 
 from flask import Flask, render_template, request
