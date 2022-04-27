@@ -47,7 +47,6 @@ def test_new_student_with_fixture_2(new_student_2):
          AND
          tablename is defined correctly
     """
-    
      assert new_student_2.id == 2
      assert new_student_2.username == 'Us3rn@m3Us3rn@m3'
      assert new_student_2.password == 'P@$$w0rdP@$$w0rd'
@@ -95,9 +94,4 @@ def test_new_instructor_with_fixture(new_instructor):
      assert new_instructor.id == 2
      assert new_instructor.username == 'Us3rn@m33'
      assert new_instructor.password == 'P@$$w0rdd'
-     assert new_instructor.__tablename__ == 'instructor'
-    
-
-    
-
-    
+     assert new_instructor.__tablename__ == 'instructor' 
