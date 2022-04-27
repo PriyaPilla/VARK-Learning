@@ -6,7 +6,7 @@ For tests to run in Visual Studio Code, create a .vscode/settings.json file usin
 
 A file will be created. Erase what's in there. 
 
-The contents that work used are below:
+The contents that work are below:
 
 {
 
