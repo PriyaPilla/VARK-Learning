@@ -1,8 +1,10 @@
 # VARK-Learning
 
-For tests to run in Visual Studio Code, create a .vscode/settings.json file using testing -> configure tests
+For tests to run in Visual Studio Code, create a .vscode/settings.json file using testing -> configure tests.
+
 A file will be created. Erase what's in there. 
-The contents I used are below:
+
+The contents that work used are below:
 
 {
     "python.testing.pytestArgs": [
@@ -11,3 +13,5 @@ The contents I used are below:
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
 }
+
+If you do not have Visual Studio Code, just make sure you have pytest imported from the command line before running tests. 
